@@ -43,7 +43,7 @@ class Ireports
         $conductor='';
         $driver='';
         foreach($devices as $device):
-            $query[]=$this->rdb->qb('where',"wbopentimestamp BETWEEN '$from' AND '$to'",NULL,FALSE);
+            $query[]=$this->rdb->qb('where',"(wbopentimestamp BETWEEN '$from' AND '$to' OR wbclosedrectimestamp IS NULL)",NULL,FALSE);
             $query[]=$this->rdb->qb('where',"wb_devices_id",$device['id_devices']);
             $waybills=$this->rdb->fetch('data','waybilldetails',$query);
             unset($query);

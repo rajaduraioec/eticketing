@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
 	<title>Welcome to Reactor Framework</title>
 
 	<style type="text/css">
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 	</div>
 
-	<p class="footer"> Reactor Framework is developed by <a href="//www.increatech.com">Increatech</a> | Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'Reactor Version <strong>' . R_VERSION . '</strong>' : '' ?></p>
+	<!--<p class="footer"> Reactor Framework is developed by <a href="//www.increatech.com"></a> | Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'Reactor Version <strong>' . R_VERSION . '</strong>' : '' ?></p>-->
 </div>
 
 </body>

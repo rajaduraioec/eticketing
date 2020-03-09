@@ -39,6 +39,7 @@ if (!defined('RAPPVERSION'))
                         <thead>
                             <tr>
                                 <th><?=$ictdata['idioms']['dashboard_admin_c1'];?></th>
+                                <th><?=$ictdata['idioms']['dashboard_admin_c5'];?></th>
                                 <th><?=$ictdata['idioms']['dashboard_admin_c2'];?></th>
                                 <th><?=$ictdata['idioms']['dashboard_admin_c3'];?></th>
                                 <th><?=$ictdata['idioms']['dashboard_admin_c4'];?></th>
@@ -69,6 +70,7 @@ if (!defined('RAPPVERSION'))
                         <thead>
                             <tr>
                                 <th><?=$ictdata['idioms']['dashboard_admin_c1'];?></th>
+                                <th><?=$ictdata['idioms']['dashboard_admin_c5'];?></th>
                                 <th><?=$ictdata['idioms']['dashboard_admin_c2'];?></th>
                                 <th><?=$ictdata['idioms']['dashboard_admin_c3'];?></th>
                                 <th><?=$ictdata['idioms']['dashboard_admin_c4'];?></th>

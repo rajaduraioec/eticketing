@@ -27,7 +27,7 @@ class Configtool_model extends R_Model {
                 
             $cdata['configid'] = $this->genconfigid();
 	        if($this->rinput->post('luggage_status')):
-	            $cdata['luggage_status'] = 1;
+	            $cdata['luggage_status'] = 1; //luggage should be 1 for enabling
 	            else:
 	            $cdata['luggage_status'] = 0;
 	        endif;

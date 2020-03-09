@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <?php
         $assets=array(
             array('css','bootstrap.min.css'),
@@ -95,7 +95,7 @@
             array('js','moment','moment.js'),
             array('js','bootstrap-daterangepicker','daterangepicker.js'),
         );
-        $init=array('jquery.ict.ajax.init','jquery.ict-modals.ajax.init','jquery.select.init');
-        $this->rview->populatefooterscripts($assets,$plugin,$init);?>
+            $init=array('jquery.ict.ajax.init','jquery.ict-modals.ajax.init','jquery.select.init');
+            $this->rview->populatefooterscripts($assets,$plugin,$init);?>
     </body>
 </html>

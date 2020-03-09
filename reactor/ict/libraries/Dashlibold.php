@@ -16,7 +16,6 @@
 
 defined('RAPPVERSION') or exit('No direct script access allowed');
 
-
 /* 
  * Copyright 2017 Increatech Business Solution Pvt Ltd, India.
  * All Rights Reserved
@@ -45,7 +44,7 @@ class Dashlib
         $configid='';
         foreach($devices as $device):
             $query[]=$this->rdb->qb('order_by',"wbopentimestamp",'desc');
-            $query[]=$this->rdb->qb('where',"wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto' ",NULL,FALSE);
+            $query[]=$this->rdb->qb('where',"(is_wb_closed='0') OR (wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto')",NULL,FALSE);
             $query[]=$this->rdb->qb('where',"wb_devices_id",$device['id_devices']);
             $waybills=$this->rdb->fetch('data','waybilldetails',$query);
             unset($query);
@@ -122,7 +121,7 @@ class Dashlib
         $configid='';
         foreach($devices as $device):
             $query[]=$this->rdb->qb('order_by',"wbopentimestamp",'desc');
-            $query[]=$this->rdb->qb('where',"wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto' ",NULL,FALSE);
+            $query[]=$this->rdb->qb('where',"(is_wb_closed='0') OR (wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto')",NULL,FALSE);
             $query[]=$this->rdb->qb('where',"wb_devices_id",$device['id_devices']);
             $waybills=$this->rdb->fetch('data','waybilldetails',$query);
             unset($query);
@@ -198,7 +197,7 @@ class Dashlib
         $configid='';
         foreach($devices as $device):
             $query[]=$this->rdb->qb('order_by',"wbopentimestamp",'desc');
-            $query[]=$this->rdb->qb('where',"wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto' ",NULL,FALSE);
+            $query[]=$this->rdb->qb('where',"(is_wb_closed='0') OR (wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto')",NULL,FALSE);
             $query[]=$this->rdb->qb('where',"wb_devices_id",$device['id_devices']);
             $waybills=$this->rdb->fetch('data','waybilldetails',$query);
             unset($query);
@@ -264,9 +263,6 @@ class Dashlib
         return $reports;
     }
     public function genlivestatus(){
-        
-        $datefrom=date('Y-m-d 00:00:00');
-        $dateto=date('Y-m-d 23:59:59');
         $reports=array();
         $query[]=$this->rdb->qb('order_by',"depot_name",'asc');
         $depots=$this->rdb->fetch('default','depots',$query);
@@ -277,11 +273,9 @@ class Dashlib
             $amount=0;
             $passengers=0;
             $waybillscount=0;
-            $devicecount=0;
             foreach($devices as $device):
-                $devicecount = $devicecount +1;
                 $query[]=$this->rdb->qb('order_by',"wbopentimestamp",'desc');
-                $query[]=$this->rdb->qb('where',"wbopentimestamp BETWEEN '$datefrom' AND '$dateto'",NULL,FALSE);
+                $query[]=$this->rdb->qb('where',"is_wb_closed",'0');
                 $query[]=$this->rdb->qb('where',"wb_devices_id",$device['id_devices']);
                 $waybills=$this->rdb->fetch('data','waybilldetails',$query);
                 unset($query);
@@ -298,14 +292,12 @@ class Dashlib
                     endif;
                     endforeach;
                 endif;
-                
             endforeach;
             $reports[$count]['depot']=$depot['depot_name'];
             $reports[$count]['depotid']=$depot['id_depots'];
             $reports[$count]['waybills']=$waybillscount;
             $reports[$count]['amount']=$amount;
             $reports[$count]['passengers']=$passengers;
-            $reports[$count]['devicecount']=$devicecount;
             $count+=1;
         endforeach;
         return $reports;
@@ -320,7 +312,7 @@ class Dashlib
         $configid='';
         foreach($devices as $device):
             $query[]=$this->rdb->qb('order_by',"wbopentimestamp",'desc');
-            $query[]=$this->rdb->qb('where',"wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto' ",NULL,FALSE);
+            $query[]=$this->rdb->qb('where',"(is_wb_closed='0') OR (wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto')",NULL,FALSE);
             $query[]=$this->rdb->qb('where',"wb_devices_id",$device['id_devices']);
             $waybills=$this->rdb->fetch('data','waybilldetails',$query);
             unset($query);
@@ -397,7 +389,7 @@ class Dashlib
         $configid='';
         foreach($devices as $device):
             $query[]=$this->rdb->qb('order_by',"wbopentimestamp",'desc');
-            $query[]=$this->rdb->qb('where',"wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto' ",NULL,FALSE);
+            $query[]=$this->rdb->qb('where',"(is_wb_closed='0') OR (wbclosedrectimestamp BETWEEN '$datefrom' AND '$dateto')",NULL,FALSE);
             $query[]=$this->rdb->qb('where',"wb_devices_id",$device['id_devices']);
             $waybills=$this->rdb->fetch('data','waybilldetails',$query);
             unset($query);
@@ -463,9 +455,6 @@ class Dashlib
         return $reports;
     }
     public function genlaststatus(){
-        
-        $datefrom=date('Y-m-d 00:00:00',strtotime("-1 days"));
-        $dateto=date('Y-m-d 23:59:59',strtotime("-1 days"));
         $reports=array();
         $query[]=$this->rdb->qb('order_by',"depot_name",'asc');
         $depots=$this->rdb->fetch('default','depots',$query);
@@ -476,12 +465,10 @@ class Dashlib
             $amount=0;
             $passengers=0;
             $waybillscount=0;
-            $devicecount=0;
             foreach($devices as $device):
-                $devicecount+=1;
                 $query[]=$this->rdb->qb('limit',"1");
                 $query[]=$this->rdb->qb('order_by',"wbopentimestamp",'desc');
-                $query[]=$this->rdb->qb('where',"wbopentimestamp BETWEEN '$datefrom' AND '$dateto'",NULL,FALSE);
+                $query[]=$this->rdb->qb('where',"is_wb_closed",'1');
                 $query[]=$this->rdb->qb('where',"wb_devices_id",$device['id_devices']);
                 $waybills=$this->rdb->fetch('data','waybilldetails',$query);
                 unset($query);
@@ -504,7 +491,6 @@ class Dashlib
             $reports[$count]['waybills']=$waybillscount;
             $reports[$count]['amount']=$amount;
             $reports[$count]['passengers']=$passengers;
-            $reports[$count]['devicecount']=$devicecount;
             $count+=1;
         endforeach;
         return $reports;

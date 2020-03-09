@@ -26,12 +26,14 @@ class Dashboard_model extends R_Model {
             return $this->dashlib->genlivestatusbydepot($this->rauth->login_depot());
         else
             return $this->dashlib->genlivestatus();
+            // return 1;
     }
     function _getlastdata(){
         if($this->rauth->is_depot())
             return $this->dashlib->genlaststatusbydepot($this->rauth->login_depot());
         else
             return $this->dashlib->genlaststatus();
+            // return 1;
     }
     function _getdepotdata($id){
         $return['live']= $this->dashlib->genlivestatusbydepot($id);

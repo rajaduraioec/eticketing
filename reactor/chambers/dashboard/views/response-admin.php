@@ -35,6 +35,7 @@ if (!defined('RAPPVERSION'))
     <thead>
         <tr>
             <th><?=$ictdata['idioms']['dashboard_admin_c1'];?></th>
+            <th><?=$ictdata['idioms']['dashboard_admin_c5'];?></th>
             <th><?=$ictdata['idioms']['dashboard_admin_c2'];?></th>
             <th><?=$ictdata['idioms']['dashboard_admin_c3'];?></th>
             <th><?=$ictdata['idioms']['dashboard_admin_c4'];?></th>
@@ -45,6 +46,7 @@ if (!defined('RAPPVERSION'))
         $amount=0;
         $pass=0;
         $wbcount=0;
+        $dvcount=0;
         foreach($results as $row):
         ?>
         <tr>
@@ -52,11 +54,13 @@ if (!defined('RAPPVERSION'))
                 <a href="<?=$this->rview->url("dashboard/ajdepotstatus/".$row['depotid']);?>" class="simple-ajax-modal">
             <?=$row['depot'];?></a>
             </td>
+            <td style="text-align:right;"><?=$row['devicecount'];?></td>
             <td style="text-align:right;"><?=$row['waybills'];?></td>
             <td style="text-align:right;"><?=number_format ( $row['amount'] , 2 , "." , "," );?></td>
             <td style="text-align:right;"><?=$row['passengers'];?></td>
         </tr>
         <?php
+        $dvcount+=$row['devicecount'];
         $wbcount+=$row['waybills'];
         $amount+=$row['amount'];
         $pass+=$row['passengers'];
@@ -66,6 +70,7 @@ if (!defined('RAPPVERSION'))
     <tfoot>
         <tr>
             <td>Total</td>
+            <td style="text-align:right;"><?=$dvcount;?></td>
             <td style="text-align:right;"><?=$wbcount;?></td>
             <td style="text-align:right;"><?=number_format ( $amount , 2 , "." , "," );?></td>
             <td style="text-align:right;"><?=$pass;?></td>

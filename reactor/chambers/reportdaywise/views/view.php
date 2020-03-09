@@ -65,7 +65,7 @@ if (!defined('RAPPVERSION'))
                         <th><?=$ictdata['idioms']['report_c3'];?></th>
                         <th><?=$ictdata['idioms']['report_c4'];?></th>
                         <th><?=$ictdata['idioms']['report_c9'];?></th>
-                        <th><?=$ictdata['idioms']['report_c8'];?></th>
+                        <!--<th><?=$ictdata['idioms']['report_c8'];?></th>-->
                         <th><?=$ictdata['idioms']['report_c19'];?></th>
                         <th><?=$ictdata['idioms']['report_c5'];?></th>
                         <th><?=$ictdata['idioms']['report_c6'];?></th>
@@ -74,6 +74,7 @@ if (!defined('RAPPVERSION'))
                         <th><?=$ictdata['idioms']['report_c22'];?></th>
                         <th><?=$ictdata['idioms']['report_c23'];?></th>
                         <th><?=$ictdata['idioms']['report_c24'];?></th>
+                        <th><?=$ictdata['idioms']['report_c61'];?></th>
                         <th><?=$ictdata['idioms']['report_c25'];?></th>
                         <th><?=$ictdata['idioms']['report_c26'];?></th>
                         <th><?=$ictdata['idioms']['report_c27'];?></th>

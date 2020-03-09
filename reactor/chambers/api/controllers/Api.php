@@ -29,6 +29,7 @@ class Api extends REST_Controller {
      * This API will provide response to the Device about the real time of server in IST
      */
     function synctime_get(){
+        date_default_timezone_set('Africa/Accra');
         $time=date("Y-m-d  H:i:s");
         $response = [
             ['time' => $time]];

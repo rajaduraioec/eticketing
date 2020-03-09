@@ -47,7 +47,7 @@ if (!defined('RAPPVERSION'))
             <th><?=$ictdata['idioms']['report_c3'];?></th>
             <th><?=$ictdata['idioms']['report_c4'];?></th>
             <th><?=$ictdata['idioms']['report_c9'];?></th>
-            <th><?=$ictdata['idioms']['report_c8'];?></th>
+            <!--<th><?=$ictdata['idioms']['report_c8'];?></th>-->
             <th><?=$ictdata['idioms']['report_c19'];?></th>
             <th><?=$ictdata['idioms']['report_c5'];?></th>
             <th><?=$ictdata['idioms']['report_c6'];?></th>
@@ -56,6 +56,7 @@ if (!defined('RAPPVERSION'))
             <th><?=$ictdata['idioms']['report_c22'];?></th>
             <th><?=$ictdata['idioms']['report_c23'];?></th>
             <th><?=$ictdata['idioms']['report_c24'];?></th>
+            <th><?=$ictdata['idioms']['report_c61'];?></th>
             <th><?=$ictdata['idioms']['report_c25'];?></th>
             <th><?=$ictdata['idioms']['report_c26'];?></th>
             <th><?=$ictdata['idioms']['report_c27'];?></th>
@@ -76,7 +77,7 @@ if (!defined('RAPPVERSION'))
             <td><?=date('Y-m-d',  strtotime($row['wbopening']));?></td>
             <td><?=$row['busno'];?></td>
             <td><?=$row['conductor'];?></td>
-            <td><?=$row['driver'];?></td>
+            <!--<td><?=$row['driver'];?></td>-->
             <td><?=$row['ticketrange'];?></td>
             <td><?=$row['wbn'];?></td>
             <td><?=$row['routeno'];?></td>
@@ -85,6 +86,7 @@ if (!defined('RAPPVERSION'))
             <td><?=$row['tickets'];?></td>
             <td><?=$row['passes'];?></td>
             <td><?=$row['luggages'];?></td>
+            <td><?=$row['ticketamt'];?></td>
             <td><?=$row['lugamt'];?></td>
             <td><?=$row['cashamt'];?></td>
             <td><?=$row['cardamt'];?></td>

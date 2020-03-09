@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
         <title>MMT Transport</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="Application for MMT Transport developed by Increatech Business Solution Pvt Ltd" name="description" />

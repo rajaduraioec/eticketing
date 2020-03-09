@@ -66,25 +66,25 @@ $enabledatabase = TRUE;
 $rdbs[]=array(
 	'alise'	=> 'default',
 	'hostname' => 'localhost',
-	'username' => 'mmttechm_demo',
-	'password' => 'LU;tY!VGksgF',
-	'database' => 'mmttechm_demo',
+	'username' => 'pqkzdwhdqm',
+	'password' => 'Q2B3eBA26z',
+	'database' => 'pqkzdwhdqm',
 	'dbdriver' => 'mysqli'
 );
 $rdbs[]=array(
 	'alise'	=> 'config',
 	'hostname' => 'localhost',
-	'username' => 'mmttechm_demo',
-	'password' => 'LU;tY!VGksgF',
-	'database' => 'mmttechm_democonfig',
+	'username' => 'xwgwygyqde',
+	'password' => 'MgG3CEpgES',
+	'database' => 'xwgwygyqde',
 	'dbdriver' => 'mysqli'
 );
 $rdbs[]=array(
 	'alise'	=> 'data',
 	'hostname' => 'localhost',
-	'username' => 'mmttechm_demo',
-	'password' => 'LU;tY!VGksgF',
-	'database' => 'mmttechm_demodata',
+	'username' => 'xzzvpyxqsd',
+	'password' => 'NbsKwhj4mv',
+	'database' => 'xzzvpyxqsd',
 	'dbdriver' => 'mysqli'
 );
 
